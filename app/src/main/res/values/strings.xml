@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ProEscRec</string>
+    <string name="nombre_programa">Programa de reconstrucción de escuelas públicas</string>
+    <string name="bienevenido">Bienevenido</string>
+    <string name="nombre_usuario">Nombre de usuario</string>
+    <string name="contrasena">Contraseña</string>
+    <string name="olvide_contrasena"><u>Olvidé mi contraseña</u></string>
+    <string name="ingresar">Ingresar</string>
+    <string name="filtrar">Filtrar</string>
+</resources>

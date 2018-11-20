@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="com.jsm_proescrec-model_jar_1.0-SNAPSHOTPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>com.jsm.proescrec.model.EstructuraPlanteles</class>
+    <class>com.jsm.proescrec.model.CatMunicipios</class>
+    <class>com.jsm.proescrec.model.DanosPlantel</class>
+    <class>com.jsm.proescrec.model.CatEstatusDano</class>
+    <class>com.jsm.proescrec.model.FotosPlantel</class>
+    <class>com.jsm.proescrec.model.DetalleEstructuraPlanteles</class>
+    <class>com.jsm.proescrec.model.EstadisticasPlanteles</class>
+    <class>com.jsm.proescrec.model.RolesUsuarios</class>
+    <class>com.jsm.proescrec.model.Usuarios</class>
+    <class>com.jsm.proescrec.model.CatAsentamientos</class>
+    <class>com.jsm.proescrec.model.EstatusFinanciero</class>
+    <class>com.jsm.proescrec.model.Roles</class>
+    <class>com.jsm.proescrec.model.CatTipoEstructura</class>
+    <class>com.jsm.proescrec.model.CatEntidades</class>
+    <class>com.jsm.proescrec.model.Planteles</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/pro_esc_rec"/>
+      <property name="javax.persistence.jdbc.user" value="pro_esc_rec"/>
+      <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="pa$$w0rd"/>
+    </properties>
+  </persistence-unit>
+</persistence>
