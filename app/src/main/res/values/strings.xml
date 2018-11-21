@@ -12,4 +12,8 @@
     <string name="descargar_planteles">Descargar planteles</string>
     <string name="sincronizar_datos">Sincronizar datos</string>
     <string name="cambiar_contrasena">Cambiar contraseña</string>
+    <string name="descargar_titulo">Descargar datos de plateles</string>
+    <string name="seleccione_entidad">Seleccione entidad</string>
+    <string name="seleccione_municipio">Seleccione municipio</string>
+    <string name="seleccione_asentamiento">Seleccione asentamiento</string>
 </resources>

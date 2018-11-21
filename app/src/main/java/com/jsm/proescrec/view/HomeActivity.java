@@ -1,5 +1,6 @@
 package com.jsm.proescrec.view;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
@@ -17,8 +18,6 @@ import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -68,6 +67,21 @@ public class HomeActivity extends AppCompatActivity {
                 new ActionBarDrawerToggle(this, mainDrawer, R.string.abrir, R.string.cerrar);
         mainDrawer.addDrawerListener(drawerToggle);
         drawerToggle.syncState();
+
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                int id = menuItem.getItemId();
+                switch(id) {
+                    case R.id.descargar:
+                        startActivity(DescargarPlantelesActivity.getDescargarIntent(HomeActivity.this));
+                    case R.id.sincronizar:
+                    case R.id.cuenta:
+                    default:
+                        return true;
+                }
+            }
+        });
     }
 
     private void setRecyclerView() {
