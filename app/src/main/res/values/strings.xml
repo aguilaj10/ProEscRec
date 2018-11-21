@@ -7,4 +7,9 @@
     <string name="olvide_contrasena"><u>Olvidé mi contraseña</u></string>
     <string name="ingresar">Ingresar</string>
     <string name="filtrar">Filtrar</string>
+    <string name="abrir">Abrir</string>
+    <string name="cerrar">Cerrar</string>
+    <string name="descargar_planteles">Descargar planteles</string>
+    <string name="sincronizar_datos">Sincronizar datos</string>
+    <string name="cambiar_contrasena">Cambiar contraseña</string>
 </resources>

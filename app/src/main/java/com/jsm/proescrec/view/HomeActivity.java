@@ -1,21 +1,28 @@
 package com.jsm.proescrec.view;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import hugo.weaving.DebugLog;
 
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.google.android.material.navigation.NavigationView;
 import com.jsm.proescrec.R;
 import com.jsm.proescrec.model.CatAsentamientos;
 import com.jsm.proescrec.model.CatEntidades;
@@ -27,13 +34,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
+    private static final String TAG = HomeActivity.class.getSimpleName();
     @BindView(R.id.lista_plateles)
     RecyclerView recyclerPlanteles;
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
 
+    @BindView(R.id.main_drawer)
+    DrawerLayout mainDrawer;
+
+    @BindView(R.id.nv)
+    NavigationView navigationView;
+
     private SearchView searchView;
+    private ActionBarDrawerToggle drawerToggle;
 
     public static Intent getHomeIntent(Context ctx) {
         return new Intent(ctx, HomeActivity.class);
@@ -45,12 +60,17 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
 
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.menu);
+        setActionBar();
 
+        setRecyclerView();
+
+        drawerToggle =
+                new ActionBarDrawerToggle(this, mainDrawer, R.string.abrir, R.string.cerrar);
+        mainDrawer.addDrawerListener(drawerToggle);
+        drawerToggle.syncState();
+    }
+
+    private void setRecyclerView() {
         PlantelListAdapter adapter = new PlantelListAdapter(getPlanteles());
         DividerItemDecoration dividerItemDecoration
                 = new DividerItemDecoration(recyclerPlanteles.getContext(),
@@ -59,6 +79,14 @@ public class HomeActivity extends AppCompatActivity {
                 new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
         recyclerPlanteles.addItemDecoration(dividerItemDecoration);
         recyclerPlanteles.setAdapter(adapter);
+    }
+
+    private void setActionBar() {
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.menu);
     }
 
     @Override
@@ -93,14 +121,19 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     @Override
+    @DebugLog
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_search) {
+            return true;
+        } else if (id == android.R.id.home) {
+            if (mainDrawer.isDrawerOpen(GravityCompat.START)) {
+                mainDrawer.closeDrawer(GravityCompat.START);
+            } else {
+                mainDrawer.openDrawer(GravityCompat.START);
+            }
             return true;
         }
 
