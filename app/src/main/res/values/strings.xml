@@ -16,4 +16,6 @@
     <string name="seleccione_entidad">Seleccione entidad</string>
     <string name="seleccione_municipio">Seleccione municipio</string>
     <string name="seleccione_asentamiento">Seleccione asentamiento</string>
+    <string name="descargando_datos">Descargando los datos del plantel a la base de datos del dispositivo. Espere un momento.</string>
+    <string name="cancelar">Cancelar</string>
 </resources>

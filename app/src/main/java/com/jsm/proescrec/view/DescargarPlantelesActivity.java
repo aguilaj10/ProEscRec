@@ -8,17 +8,21 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 
 import com.jsm.proescrec.R;
 
 public class DescargarPlantelesActivity extends AppCompatActivity {
+    public static final String TAG = DescargarPlantelesActivity.class.getSimpleName();
     @BindView(R.id.spinner_entidad)
     Spinner spinnerEntidad;
     @BindView(R.id.spinner_municipio)
     Spinner spinnerMunicipio;
     @BindView(R.id.spinner_asentamiento)
     Spinner spinnerAsentamiento;
+    @BindView(R.id.progressbar)
+    ProgressBar progressBar;
 
     public static Intent getDescargarIntent(Context ctx) {
         return new Intent(ctx, DescargarPlantelesActivity.class);
