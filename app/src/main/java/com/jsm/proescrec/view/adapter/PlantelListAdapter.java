@@ -33,25 +33,31 @@ public class PlantelListAdapter extends RecyclerView.Adapter<PlantelListAdapter.
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         final int index = holder.getAdapterPosition();
-        holder.nombreEscuela.setText(listaPlanteles.get(index).getNombre());
+        holder.nombrePlantel.setText(listaPlanteles.get(index).getNombre());
+        holder.direccionPlantel.setText(getDireccion(index));
+    }
+
+    private String getDireccion(int index) {
         final StringBuilder direccion = new StringBuilder();
         direccion.append(listaPlanteles.get(index).getDomicilio()).append(", ");
         direccion.append(listaPlanteles.get(index).getCveAsentamiento().getTipoAsentamiento()).append(" ");
         direccion.append(listaPlanteles.get(index).getCveAsentamiento().getAsentamiento()).append(", ");
-        direccion.append(listaPlanteles.get(index).getCveAsentamiento().)
-        holder.direccionEscuela.setText(direccion);
+        direccion.append(listaPlanteles.get(index).getCveAsentamiento().getCveMunicipio().getMunicipio()).append(", ");
+        direccion.append(listaPlanteles.get(index).getCveAsentamiento().getCveMunicipio().getCveEntidad().getEntidad()).append(", ");
+        direccion.append(listaPlanteles.get(index).getCveAsentamiento().getCodigoPostal());
+        return direccion.toString();
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return listaPlanteles.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        @BindView(R.id.nombre_escuela)
-        TextView nombreEscuela;
-        @BindView(R.id.direccion_escuela)
-        TextView direccionEscuela;
+        @BindView(R.id.nombre_plantel)
+        TextView nombrePlantel;
+        @BindView(R.id.direccion_plantel)
+        TextView direccionPlantel;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);

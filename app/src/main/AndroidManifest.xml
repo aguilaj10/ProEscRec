@@ -16,8 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.Home"
-            android:theme="@android:style/Theme.Material.NoActionBar">
+        <activity android:name=".view.HomeActivity"
+            android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.app.searchable"
                 android:resource="@xml/searcheable" />
