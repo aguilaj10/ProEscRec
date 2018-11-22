@@ -76,6 +76,7 @@ public class HomeActivity extends AppCompatActivity {
                     case R.id.descargar:
                         startActivity(DescargarPlantelesActivity.getDescargarIntent(HomeActivity.this));
                     case R.id.sincronizar:
+                        startActivity(SincronizarActivity.getSincronizarIntent(HomeActivity.this));
                     case R.id.cuenta:
                     default:
                         return true;
@@ -85,7 +86,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void setRecyclerView() {
-        PlantelListAdapter adapter = new PlantelListAdapter(getPlanteles());
+        PlantelListAdapter adapter = new PlantelListAdapter(this, getPlanteles());
         DividerItemDecoration dividerItemDecoration
                 = new DividerItemDecoration(recyclerPlanteles.getContext(),
                 RecyclerView.VERTICAL);

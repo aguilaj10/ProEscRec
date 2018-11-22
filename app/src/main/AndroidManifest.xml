@@ -27,7 +27,9 @@
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.DescargarPlantelesActivity"></activity>
+        <activity android:name=".view.DescargarPlantelesActivity" />
+        <activity android:name=".view.SincronizarActivity" />
+        <activity android:name=".view.Form1Activity"></activity>
     </application>
 
 </manifest>

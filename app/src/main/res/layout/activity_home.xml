@@ -23,6 +23,11 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
+    <include
+        layout="@layout/drawer_main"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/barra_filtro" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/lista_plateles"
         android:layout_width="match_parent"
@@ -32,10 +37,5 @@
         app:layout_constraintTop_toBottomOf="@id/barra_filtro"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
-
-    <include
-        layout="@layout/drawer_main"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/barra_filtro" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
