@@ -7,224 +7,550 @@
     android:background="@drawable/fondo_main"
     tools:context=".view.Form1Activity">
 
-    <TextView
-        android:id="@+id/titulo"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/cedula_titulo"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:background="@color/colorAccent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toTopOf="@+id/cancelar"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/primary_text"
-        app:layout_constraintTop_toBottomOf="@+id/titulo"
-        app:layout_constraintEnd_toEndOf="parent">
-
-    </View>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/fecha"
-        android:text="dd/mm/yyyy"
-        android:layout_marginTop="15dp"
-        app:layout_constraintTop_toBottomOf="@+id/titulo"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/fecha_elaboracion"
-        android:textStyle="bold"
-        android:layout_marginEnd="5dp"
-        app:layout_constraintTop_toTopOf="@+id/fecha"
-        app:layout_constraintEnd_toStartOf="@+id/fecha"/>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/primary_text"
-        app:layout_constraintTop_toBottomOf="@+id/fecha"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/nombre_plantel"
-        android:id="@+id/nom_plantel_titulo"
-        android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="@+id/layout_clave"
-        app:layout_constraintBottom_toBottomOf="@+id/layout_clave"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintWidth_percent=".16"/>
-
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/nombre_plantel"
-        android:layout_marginStart="5dp"
-        android:text="Preescolar Gustavo Baz AEP"
-        app:layout_constraintTop_toTopOf="@+id/layout_clave"
-        app:layout_constraintBottom_toBottomOf="@+id/layout_clave"
-        app:layout_constraintLeft_toRightOf="@+id/nom_plantel_titulo"
-        app:layout_constraintWidth_percent=".5"/>
-
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/clave_plantel"
-        android:id="@+id/clave"
-        android:textStyle="bold"
-        android:paddingStart="5dp"
-        app:layout_constraintTop_toTopOf="@+id/layout_clave"
-        app:layout_constraintBottom_toBottomOf="@+id/layout_clave"
-        app:layout_constraintLeft_toRightOf="@+id/nombre_plantel"
-        app:layout_constraintWidth_percent=".1"/>
-
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingStart="5dp"
-        android:layout_marginTop="10dp"
-        android:id="@+id/layout_clave"
-        app:layout_constraintTop_toBottomOf="@+id/fecha"
-        app:layout_constraintLeft_toRightOf="@+id/clave"
-        app:layout_constraintWidth_percent=".12">
-        <TextView
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/matutino"
-            android:textStyle="bold"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/vespertino"
-            android:textStyle="bold"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/nocturno"
-            android:textStyle="bold"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintTop_toBottomOf="@+id/fecha"
-        app:layout_constraintLeft_toRightOf="@+id/layout_clave"
-        app:layout_constraintWidth_percent=".12">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="15EJN2018"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
+            android:layout_height="wrap_content">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/primary_text"
-        app:layout_constraintTop_toBottomOf="@+id/layout_clave"
-        app:layout_constraintEnd_toEndOf="parent"/>
+            <TextView
+                android:id="@+id/titulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorAccent"
+                android:text="@string/cedula_titulo"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/nombre_director_atendio"
-        android:id="@+id/director_atendio"
-        android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="@+id/nombre_director"
-        app:layout_constraintBottom_toBottomOf="@+id/nombre_director"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintWidth_percent=".5"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/primary_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titulo">
 
-    <EditText
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/nombre_director"
-        app:layout_constraintTop_toBottomOf="@+id/layout_clave"
-        app:layout_constraintLeft_toRightOf="@+id/director_atendio"
-        app:layout_constraintWidth_percent=".5"/>
+            </View>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/primary_text"
-        app:layout_constraintTop_toBottomOf="@+id/nombre_director"
-        app:layout_constraintEnd_toEndOf="parent"/>
+            <!-- Seccion plantel -->
+            <TextView
+                android:id="@+id/fecha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="dd/mm/yyyy"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titulo" />
 
-    <TextView
-        android:id="@+id/director_mat"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/mat_abreviado"
-        android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/nom_dir_mat"
-        app:layout_constraintBottom_toBottomOf="@+id/nom_dir_mat"
-        app:layout_constraintWidth_percent=".11" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:text="@string/fecha_elaboracion"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/fecha"
+                app:layout_constraintTop_toTopOf="@+id/fecha" />
 
-    <CheckBox
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/nom_dir_mat"
-        app:layout_constraintLeft_toRightOf="@+id/director_mat"
-        app:layout_constraintTop_toBottomOf="@+id/nombre_director"
-        app:layout_constraintWidth_percent=".22"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/primary_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fecha" />
 
-    <TextView
-        android:id="@+id/director_vesp"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/vesp_abreviado"
-        android:textStyle="bold"
-        app:layout_constraintLeft_toRightOf="@+id/nom_dir_mat"
-        app:layout_constraintTop_toTopOf="@+id/nom_dir_mat"
-        app:layout_constraintBottom_toBottomOf="@+id/nom_dir_mat"
-        app:layout_constraintWidth_percent=".11" />
+            <TextView
+                android:id="@+id/nom_plantel_titulo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/nombre_plantel"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/layout_clave"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/layout_clave"
+                app:layout_constraintWidth_percent=".16" />
 
-    <CheckBox
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/nom_dir_vesp"
-        app:layout_constraintLeft_toRightOf="@+id/director_vesp"
-        app:layout_constraintTop_toBottomOf="@+id/nombre_director"
-        app:layout_constraintWidth_percent=".22"/>
+            <TextView
+                android:id="@+id/nombre_plantel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="Preescolar Gustavo Baz AEP"
+                app:layout_constraintBottom_toBottomOf="@+id/layout_clave"
+                app:layout_constraintLeft_toRightOf="@+id/nom_plantel_titulo"
+                app:layout_constraintTop_toTopOf="@+id/layout_clave"
+                app:layout_constraintWidth_percent=".5" />
 
-    <TextView
-        android:id="@+id/director_noct"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/noct_abreviado"
-        android:textStyle="bold"
-        app:layout_constraintLeft_toRightOf="@+id/nom_dir_vesp"
-        app:layout_constraintTop_toTopOf="@+id/nom_dir_mat"
-        app:layout_constraintBottom_toBottomOf="@+id/nom_dir_mat"
-        app:layout_constraintWidth_percent=".11" />
+            <TextView
+                android:id="@+id/clave"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="5dp"
+                android:text="@string/clave_plantel"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/layout_clave"
+                app:layout_constraintLeft_toRightOf="@+id/nombre_plantel"
+                app:layout_constraintTop_toTopOf="@+id/layout_clave"
+                app:layout_constraintWidth_percent=".1" />
 
-    <CheckBox
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/nom_dir_noct"
-        app:layout_constraintLeft_toRightOf="@+id/director_noct"
-        app:layout_constraintTop_toBottomOf="@+id/nombre_director"
-        app:layout_constraintWidth_percent=".22"/>
+            <LinearLayout
+                android:id="@+id/layout_clave"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:paddingStart="5dp"
+                app:layout_constraintLeft_toRightOf="@+id/clave"
+                app:layout_constraintTop_toBottomOf="@+id/fecha"
+                app:layout_constraintWidth_percent=".12">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/matutino"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/vespertino"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/nocturno"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                app:layout_constraintLeft_toRightOf="@+id/layout_clave"
+                app:layout_constraintTop_toBottomOf="@+id/fecha"
+                app:layout_constraintWidth_percent=".12">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="15EJN2018" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/primary_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_clave" />
+
+            <!-- Seccion contacto-->
+            <TextView
+                android:id="@+id/director_atendio"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/nombre_director_atendio"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/nombre_director"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/nombre_director"
+                app:layout_constraintWidth_percent=".5" />
+
+            <EditText
+                android:id="@+id/nombre_director"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName|textCapWords"
+                app:layout_constraintLeft_toRightOf="@+id/director_atendio"
+                app:layout_constraintTop_toBottomOf="@+id/layout_clave"
+                app:layout_constraintWidth_percent=".5" />
+
+            <TextView
+                android:id="@+id/director_mat"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/mat_abreviado"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/nom_dir_mat"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/nom_dir_mat"
+                app:layout_constraintWidth_percent=".11" />
+
+            <CheckBox
+                android:id="@+id/nom_dir_mat"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toRightOf="@+id/director_mat"
+                app:layout_constraintTop_toBottomOf="@+id/nombre_director"
+                app:layout_constraintWidth_percent=".22" />
+
+            <TextView
+                android:id="@+id/director_vesp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/vesp_abreviado"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/nom_dir_mat"
+                app:layout_constraintLeft_toRightOf="@+id/nom_dir_mat"
+                app:layout_constraintTop_toTopOf="@+id/nom_dir_mat"
+                app:layout_constraintWidth_percent=".11" />
+
+            <CheckBox
+                android:id="@+id/nom_dir_vesp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toRightOf="@+id/director_vesp"
+                app:layout_constraintTop_toBottomOf="@+id/nombre_director"
+                app:layout_constraintWidth_percent=".22" />
+
+            <TextView
+                android:id="@+id/director_noct"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/noct_abreviado"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/nom_dir_mat"
+                app:layout_constraintLeft_toRightOf="@+id/nom_dir_vesp"
+                app:layout_constraintTop_toTopOf="@+id/nom_dir_mat"
+                app:layout_constraintWidth_percent=".11" />
+
+            <CheckBox
+                android:id="@+id/nom_dir_noct"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toRightOf="@+id/director_noct"
+                app:layout_constraintTop_toBottomOf="@+id/nombre_director"
+                app:layout_constraintWidth_percent=".22" />
+
+            <TextView
+                android:id="@+id/tel_plantel_titulo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/telefono_platel"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/edit_tel_plantel"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/edit_tel_plantel"
+                app:layout_constraintWidth_percent=".20" />
+
+            <EditText
+                android:id="@+id/edit_tel_plantel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                app:layout_constraintLeft_toRightOf="@+id/tel_plantel_titulo"
+                app:layout_constraintTop_toBottomOf="@+id/nom_dir_mat"
+                app:layout_constraintWidth_percent=".30" />
+
+            <TextView
+                android:id="@+id/tel_cel_director"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/telefono_celular"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/edit_tel_plantel"
+                app:layout_constraintLeft_toRightOf="@id/edit_tel_plantel"
+                app:layout_constraintTop_toTopOf="@+id/edit_tel_plantel"
+                app:layout_constraintWidth_percent=".20" />
+
+            <EditText
+                android:id="@+id/edit_cel_director"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                app:layout_constraintLeft_toRightOf="@+id/tel_cel_director"
+                app:layout_constraintTop_toBottomOf="@+id/nom_dir_mat"
+                app:layout_constraintWidth_percent=".30" />
+
+            <TextView
+                android:id="@+id/tv_corre"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Correo electrónico"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/edit_correo"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/edit_correo"
+                app:layout_constraintWidth_percent=".18" />
+
+            <EditText
+                android:id="@+id/edit_correo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                app:layout_constraintLeft_toRightOf="@+id/tv_corre"
+                app:layout_constraintTop_toBottomOf="@+id/edit_tel_plantel"
+                app:layout_constraintWidth_percent=".42" />
+
+            <TextView
+                android:id="@+id/tv_whatsapp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/whatsapp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/edit_correo"
+                app:layout_constraintLeft_toRightOf="@id/edit_correo"
+                app:layout_constraintTop_toTopOf="@+id/edit_correo"
+                app:layout_constraintWidth_percent=".12" />
+
+            <EditText
+                android:id="@+id/edit_whatsapp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                app:layout_constraintLeft_toRightOf="@+id/tv_whatsapp"
+                app:layout_constraintTop_toBottomOf="@+id/edit_tel_plantel"
+                app:layout_constraintWidth_percent=".28" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/primary_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edit_correo" />
+
+            <!-- Seccion nivel-->
+            <TextView
+                android:id="@+id/tv_nivel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/nivel"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/layout_nivel"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/layout_nivel"
+                app:layout_constraintWidth_percent=".10" />
+
+            <TableLayout
+                android:id="@+id/layout_nivel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*"
+                app:layout_constraintLeft_toRightOf="@+id/tv_nivel"
+                app:layout_constraintTop_toBottomOf="@+id/edit_correo"
+                app:layout_constraintWidth_percent=".90">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView android:text="@string/preescolar"
+                        android:textStyle="bold"/>
+
+                    <TextView android:text="@string/primaria"
+                        android:textStyle="bold"/>
+
+                    <TextView android:text="@string/secundaria"
+                        android:textStyle="bold"/>
+
+                    <TextView android:text="@string/bachillerato"
+                        android:textStyle="bold"/>
+
+                    <TextView android:text="@string/superior"
+                        android:textStyle="bold"/>
+
+                    <TextView android:text="@string/otro"
+                        android:textStyle="bold"/>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <CheckBox android:id="@+id/cb_preescolar" />
+
+                    <CheckBox android:id="@+id/cb_primaria" />
+
+                    <CheckBox android:id="@+id/cb_secundaria" />
+
+                    <CheckBox android:id="@+id/cb_bachiller" />
+
+                    <CheckBox android:id="@+id/cb_superior" />
+
+                    <EditText android:id="@+id/et_otro" />
+                </TableRow>
+            </TableLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/primary_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_nivel" />
+
+            <!-- Seccion domicilio -->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_domicilio"
+                android:text="@string/domiclio"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="@+id/et_domiclio"
+                app:layout_constraintBottom_toBottomOf="@+id/et_domiclio"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintWidth_percent=".15"/>
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/et_domiclio"
+                app:layout_constraintLeft_toRightOf="@+id/tv_domicilio"
+                app:layout_constraintTop_toBottomOf="@+id/layout_nivel"
+                app:layout_constraintWidth_percent=".85"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_codigo_postal"
+                android:text="@string/codigo_postal"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="@+id/et_codigo_postal"
+                app:layout_constraintBottom_toBottomOf="@+id/et_codigo_postal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintWidth_percent=".15"/>
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/et_codigo_postal"
+                android:inputType="number"
+                app:layout_constraintLeft_toRightOf="@+id/tv_codigo_postal"
+                app:layout_constraintTop_toBottomOf="@+id/et_domiclio"
+                app:layout_constraintWidth_percent=".35"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_entidad"
+                android:text="@string/estado"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="@+id/et_codigo_postal"
+                app:layout_constraintBottom_toBottomOf="@+id/et_codigo_postal"
+                app:layout_constraintLeft_toRightOf="@+id/et_codigo_postal"
+                app:layout_constraintWidth_percent=".15"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_entidad_val"
+                android:text="@string/ingrese_codigo_postal"
+                app:layout_constraintTop_toTopOf="@+id/et_codigo_postal"
+                app:layout_constraintBottom_toBottomOf="@+id/et_codigo_postal"
+                app:layout_constraintLeft_toRightOf="@+id/tv_entidad"
+                app:layout_constraintWidth_percent=".35"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_municipio"
+                android:text="@string/municipio"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/et_codigo_postal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintWidth_percent=".15"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_municipio_val"
+                android:text="@string/ingrese_codigo_postal"
+                app:layout_constraintLeft_toRightOf="@+id/tv_municipio"
+                app:layout_constraintTop_toBottomOf="@+id/et_codigo_postal"
+                app:layout_constraintWidth_percent=".35"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_localidad"
+                android:text="@string/localidad"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@+id/et_codigo_postal"
+                app:layout_constraintLeft_toRightOf="@+id/tv_municipio_val"
+                app:layout_constraintWidth_percent=".15"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_localidad_val"
+                android:text="@string/ingrese_codigo_postal"
+                app:layout_constraintTop_toBottomOf="@+id/et_codigo_postal"
+                app:layout_constraintLeft_toRightOf="@+id/tv_localidad"
+                app:layout_constraintWidth_percent=".35"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/primary_text"
+                android:layout_marginTop="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_municipio" />
+
+            <!-- Seccion croquis -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/croquis_localizacion"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:id="@+id/tv_croquis"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_municipio"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/primary_text"
+                android:layout_marginTop="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_croquis" />
+
+            <com.google.android.gms.maps.MapView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:id="@+id/map_croquis"
+                android:background="@drawable/mapa"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_croquis"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:id="@+id/mapa"
+                android:src="@drawable/mapa"
+                android:contentDescription="@string/mapa"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_croquis">
+
+            </ImageView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+    <!-- Seccion botones-->
     <Button
         android:id="@+id/cancelar"
         android:layout_width="wrap_content"

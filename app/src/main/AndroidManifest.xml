@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.jsm.proescrec">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -29,7 +33,7 @@
         </activity>
         <activity android:name=".view.DescargarPlantelesActivity" />
         <activity android:name=".view.SincronizarActivity" />
-        <activity android:name=".view.Form1Activity"></activity>
+        <activity android:name=".view.Form1Activity" />
     </application>
 
 </manifest>

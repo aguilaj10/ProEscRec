@@ -18,8 +18,10 @@ import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.google.android.material.navigation.NavigationView;
 import com.jsm.proescrec.R;
@@ -144,11 +146,15 @@ public class HomeActivity extends AppCompatActivity {
         if (id == R.id.action_search) {
             return true;
         } else if (id == android.R.id.home) {
+
             if (mainDrawer.isDrawerOpen(GravityCompat.START)) {
+                Log.d(TAG, "onOptionsItemSelected: Open");
                 mainDrawer.closeDrawer(GravityCompat.START);
             } else {
+                Log.d(TAG, "onOptionsItemSelected: Close");
                 mainDrawer.openDrawer(GravityCompat.START);
             }
+            drawerToggle.syncState();
             return true;
         }
 
