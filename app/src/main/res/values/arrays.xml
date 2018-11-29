@@ -9,4 +9,8 @@
     <string-array name="spinner3">
         <item>Colonia Metropolitana 3ra sección</item>
     </string-array>
+    <string-array name="si_no">
+        <item>Sí</item>
+        <item>No</item>
+    </string-array>
 </resources>

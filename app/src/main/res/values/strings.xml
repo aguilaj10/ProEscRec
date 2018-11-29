@@ -59,4 +59,13 @@
     <string name="municipio">Municipio:</string>
     <string name="croquis_localizacion">Croquis de localización</string>
     <string name="mapa">Mapa</string>
+    <string name="atras">Atrás</string>
+    <string name="matricula">Matrícula</string>
+    <string name="alumnos_clase">Alumnos en clase</string>
+    <string name="edificio_sin_danos">Edificio sin daños:</string>
+    <string name="edificio_nuevo">Edificio nuevo</string>
+    <string name="total">Total:</string>
+    <string name="aulas_provisionales">Aulas provisionales:</string>
+    <string name="edificio_prestado">Edificio prestado:</string>
+    <string name="edificio_reparado">Edificio reparado:</string>
 </resources>

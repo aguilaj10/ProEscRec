@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_main"
+    tools:context=".view.Form2Activity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toTopOf="@+id/atras"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/titulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorAccent"
+                android:text="@string/cedula_titulo"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/primary_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titulo"/>
+
+            <TextView
+                android:id="@+id/tv_matricula"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_rowSpan="6"
+                android:layout_gravity="center_vertical"
+                android:text="@string/matricula"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/layout_matricula"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/layout_matricula"
+                app:layout_constraintWidth_percent=".16" />
+
+            <TableLayout
+                android:id="@+id/layout_matricula"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:layout_constraintLeft_toRightOf="@+id/tv_matricula"
+                app:layout_constraintTop_toTopOf="@+id/layout_edificio"
+                app:layout_constraintBottom_toBottomOf="@+id/layout_edificio"
+                app:layout_constraintWidth_percent=".28">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_weight=".7"
+                        android:text="@string/matutino"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/et_mat_matutino"
+                        android:layout_weight="1.3"
+                        android:autofillHints="@string/matutino"
+                        android:inputType="number" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_weight=".7"
+                        android:text="@string/vespertino"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/et_mat_vespertino"
+                        android:layout_weight="1.3"
+                        android:autofillHints="@string/vespertino"
+                        android:inputType="number" />
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_weight=".7"
+                        android:text="@string/nocturno"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:layout_height="wrap_content"
+                        android:id="@+id/et_mat_noct"
+                        android:layout_weight="1.3"
+                        android:autofillHints="@string/nocturno"
+                        android:inputType="number" />
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_weight=".7"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.3" />
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_weight=".7"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.3" />
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:text="@string/total"
+                        android:layout_weight=".7"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_mat_total"
+                        android:text="0"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.3"
+                        android:textAlignment="textEnd"/>
+                </TableRow>
+            </TableLayout>
+
+            <TextView
+                android:id="@+id/tv_spacio1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toRightOf="@+id/layout_matricula"
+                app:layout_constraintTop_toBottomOf="@+id/titulo"
+                app:layout_constraintWidth_percent=".13" />
+
+            <TextView
+                android:id="@+id/tv_alumnos_clase"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/alumnos_clase"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/layout_edificio"
+                app:layout_constraintLeft_toRightOf="@+id/tv_spacio1"
+                app:layout_constraintTop_toTopOf="@+id/layout_edificio"
+                app:layout_constraintWidth_percent=".13" />
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:entries="@array/si_no"
+                app:layout_constraintLeft_toRightOf="@+id/tv_spacio1"
+                app:layout_constraintTop_toBottomOf="@+id/tv_alumnos_clase">
+
+            </androidx.appcompat.widget.AppCompatSpinner>
+
+            <TableLayout
+                android:id="@+id/layout_edificio"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toRightOf="@+id/tv_alumnos_clase"
+                app:layout_constraintTop_toBottomOf="@+id/titulo"
+                app:layout_constraintWidth_percent=".30">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:layout_weight=".7"
+                        android:text="@string/edificio_sin_danos"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/ed_edif_sin_danos"
+                        android:layout_weight="1.3"
+                        android:inputType="number" />
+                </TableRow>
+
+                <TableRow android:weightSum="2">
+
+                    <TextView
+                        android:layout_weight=".7"
+                        android:text="@string/edificio_nuevo"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/ed_edif_nuevo"
+                        android:layout_weight="1.3"
+                        android:inputType="number" />
+                </TableRow>
+                <TableRow android:weightSum="2">
+
+                    <TextView
+                        android:layout_weight=".7"
+                        android:text="@string/aulas_provisionales"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/ed_aulas_provisionales"
+                        android:layout_weight="1.3"
+                        android:inputType="number" />
+                </TableRow>
+                <TableRow android:weightSum="2">
+
+                    <TextView
+                        android:layout_weight=".7"
+                        android:text="@string/edificio_prestado"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/ed_edif_prestado"
+                        android:layout_weight="1.3"
+                        android:inputType="number" />
+                </TableRow>
+                <TableRow android:weightSum="2">
+
+                    <TextView
+                        android:layout_weight=".7"
+                        android:text="@string/edificio_reparado"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/ed_edif_reparado"
+                        android:layout_weight="1.3"
+                        android:inputType="number" />
+                </TableRow>
+                <TableRow android:weightSum="2">
+
+                    <TextView
+                        android:layout_weight=".7"
+                        android:text="@string/total"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_edif_total"
+                        android:layout_weight="1.3"
+                        android:text="0"
+                        android:textAlignment="textEnd"/>
+                </TableRow>
+            </TableLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:background="@drawable/bordo"
+                android:id="@+id/tv_spacio2"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_edificio"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/tv_spacio2"/>
+            <!-- Segunda fila -->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <!-- Seccion botones-->
+    <Button
+        android:id="@+id/atras"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:drawableStart="@drawable/cloud_sync"
+        android:drawablePadding="5dp"
+        android:elevation="5dp"
+        android:enabled="false"
+        android:padding="5dp"
+        android:shadowRadius="5"
+        android:text="@string/atras"
+        android:textColor="@color/icons"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <Button
+        android:id="@+id/siguiente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        android:drawableStart="@drawable/cloud_sync"
+        android:drawablePadding="5dp"
+        android:elevation="5dp"
+        android:enabled="false"
+        android:padding="5dp"
+        android:shadowRadius="5"
+        android:text="@string/siguiente"
+        android:textColor="@color/icons"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/cancelar" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

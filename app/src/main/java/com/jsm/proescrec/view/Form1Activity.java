@@ -3,6 +3,7 @@ package com.jsm.proescrec.view;
 import androidx.appcompat.app.AppCompatActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import hugo.weaving.DebugLog;
 
 import android.content.Context;
@@ -11,6 +12,7 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.view.View;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -71,5 +73,11 @@ public class Form1Activity extends AppCompatActivity implements OnMapReadyCallba
     @Override
     public void onProviderDisabled(String s) {
 
+    }
+
+    @OnClick (R.id.siguiente)
+    @DebugLog
+    public void onSiguiente(View button) {
+        startActivity(Form2Activity.getForm2Intent(this));
     }
 }
