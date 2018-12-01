@@ -36,7 +36,7 @@
                 android:layout_height="2dp"
                 android:background="@color/primary_text"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/titulo"/>
+                app:layout_constraintTop_toBottomOf="@+id/titulo" />
 
             <TextView
                 android:id="@+id/tv_matricula"
@@ -56,9 +56,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                app:layout_constraintBottom_toBottomOf="@+id/layout_edificio"
                 app:layout_constraintLeft_toRightOf="@+id/tv_matricula"
                 app:layout_constraintTop_toTopOf="@+id/layout_edificio"
-                app:layout_constraintBottom_toBottomOf="@+id/layout_edificio"
                 app:layout_constraintWidth_percent=".28">
 
                 <TableRow
@@ -94,6 +94,7 @@
                         android:autofillHints="@string/vespertino"
                         android:inputType="number" />
                 </TableRow>
+
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -105,12 +106,13 @@
                         android:textStyle="bold" />
 
                     <EditText
-                        android:layout_height="wrap_content"
                         android:id="@+id/et_mat_noct"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1.3"
                         android:autofillHints="@string/nocturno"
                         android:inputType="number" />
                 </TableRow>
+
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -124,6 +126,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1.3" />
                 </TableRow>
+
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -137,22 +140,23 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1.3" />
                 </TableRow>
+
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:weightSum="2">
 
                     <TextView
+                        android:layout_weight=".7"
                         android:text="@string/total"
-                        android:layout_weight=".7"
                         android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/tv_mat_total"
-                        android:text="0"
                         android:layout_height="wrap_content"
                         android:layout_weight="1.3"
-                        android:textAlignment="textEnd"/>
+                        android:text="0"
+                        android:textAlignment="textEnd" />
                 </TableRow>
             </TableLayout>
 
@@ -176,6 +180,7 @@
                 app:layout_constraintWidth_percent=".13" />
 
             <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/alumnos_clases"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:entries="@array/si_no"
@@ -220,6 +225,7 @@
                         android:layout_weight="1.3"
                         android:inputType="number" />
                 </TableRow>
+
                 <TableRow android:weightSum="2">
 
                     <TextView
@@ -232,6 +238,7 @@
                         android:layout_weight="1.3"
                         android:inputType="number" />
                 </TableRow>
+
                 <TableRow android:weightSum="2">
 
                     <TextView
@@ -244,6 +251,7 @@
                         android:layout_weight="1.3"
                         android:inputType="number" />
                 </TableRow>
+
                 <TableRow android:weightSum="2">
 
                     <TextView
@@ -256,6 +264,7 @@
                         android:layout_weight="1.3"
                         android:inputType="number" />
                 </TableRow>
+
                 <TableRow android:weightSum="2">
 
                     <TextView
@@ -267,23 +276,650 @@
                         android:id="@+id/tv_edif_total"
                         android:layout_weight="1.3"
                         android:text="0"
-                        android:textAlignment="textEnd"/>
+                        android:textAlignment="textEnd" />
                 </TableRow>
             </TableLayout>
+
             <TextView
+                android:id="@+id/tv_spacio2"
                 android:layout_width="match_parent"
                 android:layout_height="25dp"
                 android:background="@drawable/bordo"
-                android:id="@+id/tv_spacio2"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/layout_edificio"/>
+                app:layout_constraintTop_toBottomOf="@+id/layout_edificio" />
 
             <TextView
+                android:id="@+id/tv_continuan_clases"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/tv_spacio2"/>
-            <!-- Segunda fila -->
+                android:layout_marginLeft="20dp"
+                android:text="@string/clases_continuan"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_spacio2" />
 
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/sp_continuan_clases"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:entries="@array/si_no"
+                app:layout_constraintLeft_toRightOf="@+id/tv_continuan_clases"
+                app:layout_constraintTop_toBottomOf="@+id/tv_spacio2" />
+
+            <TextView
+                android:id="@+id/tv_espeficificar_motivo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bordo"
+                android:text="@string/especificar_motivo"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_continuan_clases" />
+
+            <TableLayout
+                android:id="@+id/layout_motivo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_espeficificar_motivo">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bordo">
+
+                    <TextView
+                        android:layout_gravity="center"
+                        android:text="@string/sin_inmueble"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_gravity="center"
+                        android:text="@string/sin_banos"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_gravity="center"
+                        android:text="@string/sin_herreria"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_gravity="center"
+                        android:text="@string/sin_electricidad"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_gravity="center"
+                        android:text="@string/sin_agua"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_gravity="center"
+                        android:text="@string/otro"
+                        android:textStyle="bold" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bordo">
+
+                    <CheckBox
+                        android:id="@+id/cb_sin_inmueble"
+                        android:layout_gravity="center" />
+
+                    <CheckBox
+                        android:id="@+id/cb_sin_banos"
+                        android:layout_gravity="center" />
+
+                    <CheckBox
+                        android:id="@+id/cb_sin_herreria"
+                        android:layout_gravity="center" />
+
+                    <CheckBox
+                        android:id="@+id/cb_sin_electricidad"
+                        android:layout_gravity="center" />
+
+                    <CheckBox
+                        android:id="@+id/cb_sin_agua"
+                        android:layout_gravity="center" />
+
+                    <EditText android:id="@+id/et_otro" />
+                </TableRow>
+            </TableLayout>
+
+            <TextView
+                android:id="@+id/tv_spacio3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_motivo" />
+
+            <TextView
+                android:id="@+id/tv_datos_inmueble"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bordo"
+                android:text="@string/datos_inmueble"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_spacio3" />
+
+            <TableLayout
+                android:id="@+id/layout_datos_inmueble"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_datos_inmueble">
+
+                <TableRow android:background="@drawable/bordo">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_span="2"
+                        android:background="@drawable/bordo" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_span="4"
+                        android:background="@drawable/bordo"
+                        android:text="@string/tipo_estructura"
+                        android:textAlignment="center"
+                        android:textStyle="bold" />
+                </TableRow>
+
+                <TableRow android:background="@drawable/bordo">
+
+                    <TextView android:background="@drawable/bordo" />
+
+                    <TextView
+                        android:background="@drawable/bordo"
+                        android:text="@string/no_edificios"
+                        android:textAlignment="center"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:background="@drawable/bordo"
+                        android:text="@string/concreto_armado"
+                        android:textAlignment="center"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:background="@drawable/bordo"
+                        android:text="@string/estructura_metalica"
+                        android:textAlignment="center"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:background="@drawable/bordo"
+                        android:text="@string/mixta"
+                        android:textAlignment="center"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:text="@string/otra_especificar"
+                        android:textAlignment="center"
+                        android:textStyle="bold" />
+                </TableRow>
+
+                <TableRow android:background="@drawable/bordo">
+
+                    <TextView
+                        android:text="@string/edificios_1_nivel"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/et_edif_1_nivel"
+                        android:background="@drawable/bordo"
+                        android:inputType="number"
+                        android:textAlignment="textEnd" />
+
+                    <EditText
+                        android:id="@+id/et_edif_1_concreto"
+                        android:background="@drawable/bordo"
+                        android:inputType="number"
+                        android:textAlignment="textEnd" />
+
+                    <EditText
+                        android:id="@+id/et_edif_1_metalica"
+                        android:background="@drawable/bordo"
+                        android:inputType="number"
+                        android:textAlignment="textEnd" />
+
+                    <EditText
+                        android:id="@+id/et_edif_1_mixta"
+                        android:background="@drawable/bordo"
+                        android:inputType="number"
+                        android:textAlignment="textEnd" />
+
+                    <EditText
+                        android:id="@+id/et_edif_1_otra"
+                        android:background="@drawable/bordo"
+                        android:inputType="textAutoComplete"
+                        android:textAlignment="textEnd" />
+                </TableRow>
+
+                <TableRow android:background="@drawable/bordo">
+
+                    <TextView
+                        android:text="@string/edificios_2_nivel"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/et_edif_2_nivel"
+                        android:background="@drawable/bordo"
+                        android:inputType="number"
+                        android:textAlignment="textEnd" />
+
+                    <EditText
+                        android:id="@+id/et_edif_2_concreto"
+                        android:background="@drawable/bordo"
+                        android:inputType="number"
+                        android:textAlignment="textEnd" />
+
+                    <EditText
+                        android:id="@+id/et_edif_2_metalica"
+                        android:background="@drawable/bordo"
+                        android:inputType="number"
+                        android:textAlignment="textEnd" />
+
+                    <EditText
+                        android:id="@+id/et_edif_2_mixta"
+                        android:background="@drawable/bordo"
+                        android:inputType="number"
+                        android:textAlignment="textEnd" />
+
+                    <EditText
+                        android:id="@+id/et_edif_2_otra"
+                        android:background="@drawable/bordo"
+                        android:inputType="textAutoComplete"
+                        android:textAlignment="textEnd" />
+                </TableRow>
+
+                <TableRow android:background="@drawable/bordo">
+
+                    <TextView
+                        android:text="@string/edificios_3_nivel"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/et_edif_3_nivel"
+                        android:background="@drawable/bordo"
+                        android:inputType="number"
+                        android:textAlignment="textEnd" />
+
+                    <EditText
+                        android:id="@+id/et_edif_3_concreto"
+                        android:background="@drawable/bordo"
+                        android:inputType="number"
+                        android:textAlignment="textEnd" />
+
+                    <EditText
+                        android:id="@+id/et_edif_3_metalica"
+                        android:background="@drawable/bordo"
+                        android:inputType="number"
+                        android:textAlignment="textEnd" />
+
+                    <EditText
+                        android:id="@+id/et_edif_3_mixta"
+                        android:background="@drawable/bordo"
+                        android:inputType="number"
+                        android:textAlignment="textEnd" />
+
+                    <EditText
+                        android:id="@+id/et_edif_3_otra"
+                        android:background="@drawable/bordo"
+                        android:inputType="textAutoComplete"
+                        android:textAlignment="textEnd" />
+                </TableRow>
+
+                <TableRow android:background="@drawable/bordo">
+
+                    <TextView
+                        android:text="@string/edificios_4_nivel"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/et_edif_4_nivel"
+                        android:background="@drawable/bordo"
+                        android:inputType="number"
+                        android:textAlignment="textEnd" />
+
+                    <EditText
+                        android:id="@+id/et_edif_4_concreto"
+                        android:background="@drawable/bordo"
+                        android:inputType="number"
+                        android:textAlignment="textEnd" />
+
+                    <EditText
+                        android:id="@+id/et_edif_4_metalica"
+                        android:background="@drawable/bordo"
+                        android:inputType="number"
+                        android:textAlignment="textEnd" />
+
+                    <EditText
+                        android:id="@+id/et_edif_4_mixta"
+                        android:background="@drawable/bordo"
+                        android:inputType="number"
+                        android:textAlignment="textEnd" />
+
+                    <EditText
+                        android:id="@+id/et_edif_4_otra"
+                        android:background="@drawable/bordo"
+                        android:inputType="textAutoComplete"
+                        android:textAlignment="textEnd" />
+                </TableRow>
+
+                <TableRow android:background="@drawable/bordo">
+
+                    <TextView
+                        android:text="@string/total_edificios"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/et_edif_tot_nivel"
+                        android:background="@drawable/bordo"
+                        android:inputType="number"
+                        android:textAlignment="textEnd" />
+
+                    <EditText
+                        android:id="@+id/et_edif_tot_concreto"
+                        android:background="@drawable/bordo"
+                        android:inputType="number"
+                        android:textAlignment="textEnd" />
+
+                    <EditText
+                        android:id="@+id/et_edif_tot_metalica"
+                        android:background="@drawable/bordo"
+                        android:inputType="number"
+                        android:textAlignment="textEnd" />
+
+                    <EditText
+                        android:id="@+id/et_edif_tot_mixta"
+                        android:background="@drawable/bordo"
+                        android:inputType="number"
+                        android:textAlignment="textEnd" />
+
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bordo" />
+                </TableRow>
+            </TableLayout>
+
+            <TextView
+                android:id="@+id/tv_superficie_terreno"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/bordo"
+                android:gravity="center_vertical"
+                android:text="@string/superficie_terreno"
+                android:textAlignment="textEnd"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/et_superficie_terreno"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/et_superficie_terreno"
+                app:layout_constraintWidth_percent=".4" />
+
+            <EditText
+                android:id="@+id/et_superficie_terreno"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bordo"
+                android:inputType="number"
+                android:textAlignment="textEnd"
+                app:layout_constraintLeft_toRightOf="@+id/tv_superficie_terreno"
+                app:layout_constraintTop_toBottomOf="@+id/layout_datos_inmueble"
+                app:layout_constraintWidth_percent=".1" />
+
+            <TextView
+                android:id="@+id/tv_observcaiones"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/bordo"
+                android:gravity="center"
+                android:text="@string/observaciones"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/et_superficie_terreno"
+                app:layout_constraintLeft_toRightOf="@+id/et_superficie_terreno"
+                app:layout_constraintTop_toTopOf="@+id/et_superficie_terreno"
+                app:layout_constraintWidth_percent=".5" />
+
+            <TableLayout
+                android:id="@+id/layout_superficie"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bordo"
+                android:stretchColumns="*"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_superficie_terreno"
+                app:layout_constraintWidth_percent=".5">
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".8"
+                        android:text="@string/superficie_contacto"
+                        android:textAlignment="textEnd"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/et_superficie_contacto"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".2"
+                        android:background="@drawable/bordo"
+                        android:inputType="number"
+                        android:textAlignment="textEnd" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".8"
+                        android:text="@string/superficie_construccion"
+                        android:textAlignment="textEnd"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/et_superficie_contruccion"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".2"
+                        android:background="@drawable/bordo"
+                        android:inputType="number"
+                        android:textAlignment="textEnd" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".8"
+                        android:text="@string/superficie_areas_libres"
+                        android:textAlignment="textEnd"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/et_superficie_areas_libres"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".2"
+                        android:background="@drawable/bordo"
+                        android:inputType="number"
+                        android:textAlignment="textEnd" />
+                </TableRow>
+            </TableLayout>
+
+            <EditText
+                android:id="@+id/et_observaciones"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bordo"
+                android:lines="3"
+                app:layout_constraintBottom_toBottomOf="@+id/layout_superficie"
+                app:layout_constraintLeft_toRightOf="@+id/layout_superficie"
+                app:layout_constraintTop_toTopOf="@+id/layout_superficie"
+                app:layout_constraintWidth_percent=".5" />
+
+            <TextView
+                android:id="@+id/tv_spacio5"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_superficie" />
+
+            <TextView
+                android:id="@+id/tv_danos_inmueble"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:background="@drawable/bordo"
+                android:text="@string/tipo_danos"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_spacio5" />
+
+            <TableLayout
+                android:id="@+id/layout_tipo_danos"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bordo"
+                android:stretchColumns="*"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_danos_inmueble"
+                app:layout_constraintWidth_percent=".4">
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bordo"
+                        android:text="@string/bardas_danadas"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/sp_bardas_danadas"
+                        android:background="@drawable/bordo"
+                        android:entries="@array/si_no"/>
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bordo"
+                        android:text="@string/muros_fisurados"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/sp_muros_fisurados"
+                        android:background="@drawable/bordo"
+                        android:entries="@array/si_no"/>
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bordo"
+                        android:text="@string/columnas_danadas"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/sp_columnas_danadas"
+                        android:background="@drawable/bordo"
+                        android:entries="@array/si_no"/>
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bordo"
+                        android:text="@string/pisos_danadas"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/sp_pisos_danadas"
+                        android:background="@drawable/bordo"
+                        android:entries="@array/si_no"/>
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bordo"
+                        android:text="@string/edificios_inclinados" />
+
+                    <Spinner
+                        android:id="@+id/sp_edificios_inclinados"
+                        android:background="@drawable/bordo"
+                        android:entries="@array/si_no"/>
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bordo"
+                        android:text="@string/bardas_danadas" />
+
+                    <Spinner
+                        android:background="@drawable/bordo"
+                        android:entries="@array/si_no"/>
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bordo"
+                        android:text="@string/bardas_danadas" />
+
+                    <Spinner
+                        android:background="@drawable/bordo"
+                        android:entries="@array/si_no"/>
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bordo"
+                        android:text="@string/bardas_danadas" />
+
+                    <Spinner
+                        android:background="@drawable/bordo"
+                        android:entries="@array/si_no"/>
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bordo"
+                        android:text="@string/bardas_danadas" />
+
+                    <Spinner
+                        android:background="@drawable/bordo"
+                        android:entries="@array/si_no"/>
+                </TableRow>
+            </TableLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
