@@ -98,4 +98,23 @@
     <string name="columnas_danadas">Columnas y/o trabes dañadas</string>
     <string name="pisos_danadas">Pisos y/o losas dañadas</string>
     <string name="edificios_inclinados">Edificios inclinados</string>
+    <string name="desprendimiento_acabados">Desprendimiento de acabados</string>
+    <string name="escaleras_danadas">Escaleras dañadas</string>
+    <string name="pisos_fracturados">Pisos en patio fracturados</string>
+    <string name="edificio_colapsado">Edificio colapsado</string>
+    <string name="cisterna_fisurada">Cisterna fisurada</string>
+    <string name="tuberia_hidraulica_danada">Tubería hidráulica dañada</string>
+    <string name="tuberia_sanitaria_danada">Tubería sanitaria dañada</string>
+    <string name="tuberia_electrica_danada">Tubería eléctrica dañada</string>
+    <string name="iniciaron_trabajos_reparacion">Ya se iniciaron los trabajos de reparación?</string>
+    <string name="avance_aproximado">Avance aproximado de los trabajos de reparación:</string>
+    <string name="fecha_programada_conclusion">Fecha programada de conclusión de los trabajos de reparación:</string>
+    <string name="motivo_suspension_trabajos">Motivo de suspensión de los trabajos de rehabilitación:</string>
+    <string name="falta_pago">Falta de pago</string>
+    <string name="se_desconoce">Se desconoce</string>
+    <string name="recurso_insuficiente">Recurso insuficiente</string>
+    <string name="monto_contrato_reparacion">Monto del contrato para la reparación y/o reconstrucción:</string>
+    <string name="crecurso_concluye_reparacion">Con qué recurso se concluye la reparación total?:</string>
+    <string name="monto_aprox_conclusion">En su caso, monto aproximado para conclusión de trabajos:</string>
+    <string name="guardar">Guardar</string>
 </resources>

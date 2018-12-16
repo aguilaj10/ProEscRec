@@ -34,7 +34,8 @@
         <activity android:name=".view.DescargarPlantelesActivity" />
         <activity android:name=".view.SincronizarActivity" />
         <activity android:name=".view.Form1Activity" />
-        <activity android:name=".view.Form2Activity"></activity>
+        <activity android:name=".view.Form2Activity" />
+        <activity android:name=".view.Form3Activity"></activity>
     </application>
 
 </manifest>

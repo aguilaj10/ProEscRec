@@ -9,7 +9,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/atras"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -767,7 +767,7 @@
             <EditText
                 android:id="@+id/et_observaciones"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:background="@drawable/bordo"
                 android:lines="3"
                 app:layout_constraintBottom_toBottomOf="@+id/layout_superficie"
@@ -814,7 +814,7 @@
                     <Spinner
                         android:id="@+id/sp_bardas_danadas"
                         android:background="@drawable/bordo"
-                        android:entries="@array/si_no"/>
+                        android:entries="@array/si_no" />
                 </TableRow>
 
                 <TableRow>
@@ -828,7 +828,7 @@
                     <Spinner
                         android:id="@+id/sp_muros_fisurados"
                         android:background="@drawable/bordo"
-                        android:entries="@array/si_no"/>
+                        android:entries="@array/si_no" />
                 </TableRow>
 
                 <TableRow>
@@ -842,7 +842,7 @@
                     <Spinner
                         android:id="@+id/sp_columnas_danadas"
                         android:background="@drawable/bordo"
-                        android:entries="@array/si_no"/>
+                        android:entries="@array/si_no" />
                 </TableRow>
 
                 <TableRow>
@@ -856,7 +856,7 @@
                     <Spinner
                         android:id="@+id/sp_pisos_danadas"
                         android:background="@drawable/bordo"
-                        android:entries="@array/si_no"/>
+                        android:entries="@array/si_no" />
                 </TableRow>
 
                 <TableRow>
@@ -864,12 +864,13 @@
                     <TextView
                         android:layout_height="match_parent"
                         android:background="@drawable/bordo"
-                        android:text="@string/edificios_inclinados" />
+                        android:text="@string/edificios_inclinados"
+                        android:textStyle="bold" />
 
                     <Spinner
                         android:id="@+id/sp_edificios_inclinados"
                         android:background="@drawable/bordo"
-                        android:entries="@array/si_no"/>
+                        android:entries="@array/si_no" />
                 </TableRow>
 
                 <TableRow>
@@ -877,11 +878,13 @@
                     <TextView
                         android:layout_height="match_parent"
                         android:background="@drawable/bordo"
-                        android:text="@string/bardas_danadas" />
+                        android:text="@string/desprendimiento_acabados"
+                        android:textStyle="bold" />
 
                     <Spinner
+                        android:id="@+id/sp_desprendimiento_acabados"
                         android:background="@drawable/bordo"
-                        android:entries="@array/si_no"/>
+                        android:entries="@array/si_no" />
                 </TableRow>
 
                 <TableRow>
@@ -889,11 +892,13 @@
                     <TextView
                         android:layout_height="match_parent"
                         android:background="@drawable/bordo"
-                        android:text="@string/bardas_danadas" />
+                        android:text="@string/escaleras_danadas"
+                        android:textStyle="bold" />
 
                     <Spinner
+                        android:id="@+id/sp_escalras_danadas"
                         android:background="@drawable/bordo"
-                        android:entries="@array/si_no"/>
+                        android:entries="@array/si_no" />
                 </TableRow>
 
                 <TableRow>
@@ -901,11 +906,13 @@
                     <TextView
                         android:layout_height="match_parent"
                         android:background="@drawable/bordo"
-                        android:text="@string/bardas_danadas" />
+                        android:text="@string/pisos_fracturados"
+                        android:textStyle="bold" />
 
                     <Spinner
+                        android:id="@+id/sp_pisos_fracturados"
                         android:background="@drawable/bordo"
-                        android:entries="@array/si_no"/>
+                        android:entries="@array/si_no" />
                 </TableRow>
 
                 <TableRow>
@@ -913,13 +920,417 @@
                     <TextView
                         android:layout_height="match_parent"
                         android:background="@drawable/bordo"
-                        android:text="@string/bardas_danadas" />
+                        android:text="@string/edificio_colapsado"
+                        android:textStyle="bold" />
 
                     <Spinner
+                        android:id="@+id/sp_edificio_colapsado"
                         android:background="@drawable/bordo"
-                        android:entries="@array/si_no"/>
+                        android:entries="@array/si_no" />
                 </TableRow>
             </TableLayout>
+
+            <TextView
+                android:id="@+id/tv_spacio6"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/bordo"
+                app:layout_constraintBottom_toBottomOf="@+id/layout_tipo_danos"
+                app:layout_constraintLeft_toRightOf="@+id/layout_tipo_danos"
+                app:layout_constraintTop_toTopOf="@+id/layout_tipo_danos"
+                app:layout_constraintWidth_percent=".2" />
+
+            <TableLayout
+                android:id="@+id/layout_tipo_danos_2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/bordo"
+                android:stretchColumns="*"
+                app:layout_constraintBottom_toBottomOf="@+id/layout_tipo_danos"
+                app:layout_constraintLeft_toRightOf="@+id/tv_spacio6"
+                app:layout_constraintTop_toTopOf="@+id/layout_tipo_danos"
+                app:layout_constraintWidth_percent=".4">
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bordo"
+                        android:text="@string/cisterna_fisurada"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/sp_cisterna_fisurada"
+                        android:background="@drawable/bordo"
+                        android:entries="@array/si_no" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bordo"
+                        android:text="@string/tuberia_hidraulica_danada"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/sp_tuberia_hidraulica_danada"
+                        android:background="@drawable/bordo"
+                        android:entries="@array/si_no" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bordo"
+                        android:text="@string/tuberia_sanitaria_danada"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/sp_tuberia_sanitaria_danada"
+                        android:background="@drawable/bordo"
+                        android:entries="@array/si_no" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bordo"
+                        android:text="@string/tuberia_electrica_danada"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/sp_tuberia_electrica_danada"
+                        android:background="@drawable/bordo"
+                        android:entries="@array/si_no" />
+                </TableRow>
+            </TableLayout>
+
+            <TextView
+                android:id="@+id/tv_spacio7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bordo"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_tipo_danos" />
+
+            <TextView
+                android:id="@+id/tv_iniciaron_trabajos_reparacion"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/bordo"
+                android:text="@string/iniciaron_trabajos_reparacion"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/sp_iniciaron_trabajos_reparacion"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/sp_iniciaron_trabajos_reparacion"
+                app:layout_constraintWidth_percent=".6" />
+
+            <Spinner
+                android:id="@+id/sp_iniciaron_trabajos_reparacion"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bordo"
+                android:entries="@array/si_no"
+                app:layout_constraintLeft_toRightOf="@+id/tv_iniciaron_trabajos_reparacion"
+                app:layout_constraintTop_toBottomOf="@+id/tv_spacio7"
+                app:layout_constraintWidth_percent=".4" />
+
+            <TextView
+                android:id="@+id/tv_avance_aproximado"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/bordo"
+                android:text="@string/avance_aproximado"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/et_avance_aproximado"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/et_avance_aproximado"
+                app:layout_constraintWidth_percent=".6" />
+
+            <EditText
+                android:id="@+id/et_avance_aproximado"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bordo"
+                android:inputType="numberDecimal"
+                app:layout_constraintLeft_toRightOf="@+id/tv_avance_aproximado"
+                app:layout_constraintTop_toBottomOf="@+id/tv_iniciaron_trabajos_reparacion"
+                app:layout_constraintWidth_percent=".4" />
+
+            <TextView
+                android:id="@+id/tv_fecha_inicio_trabajos"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/bordo"
+                android:text="@string/iniciaron_trabajos_reparacion"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/et_fecha_inicio_trabajos"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/et_fecha_inicio_trabajos"
+                app:layout_constraintWidth_percent=".6" />
+
+            <EditText
+                android:id="@+id/et_fecha_inicio_trabajos"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bordo"
+                android:inputType="date"
+                app:layout_constraintLeft_toRightOf="@+id/tv_fecha_inicio_trabajos"
+                app:layout_constraintTop_toBottomOf="@+id/tv_avance_aproximado"
+                app:layout_constraintWidth_percent=".4" />
+
+            <TextView
+                android:id="@+id/tv_programada_conclusion"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/bordo"
+                android:text="@string/fecha_programada_conclusion"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/et_fecha_programada_conclusion"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/et_fecha_programada_conclusion"
+                app:layout_constraintWidth_percent=".6" />
+
+            <EditText
+                android:id="@+id/et_fecha_programada_conclusion"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bordo"
+                android:inputType="date"
+                app:layout_constraintLeft_toRightOf="@+id/tv_programada_conclusion"
+                app:layout_constraintTop_toBottomOf="@+id/tv_fecha_inicio_trabajos"
+                app:layout_constraintWidth_percent=".4" />
+
+            <TextView
+                android:id="@+id/tv_spacio8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bordo"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/et_fecha_programada_conclusion" />
+
+            <TextView
+                android:id="@+id/tv_fecha_suspension_trabajos"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/bordo"
+                android:text="@string/fecha_programada_conclusion"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/et_fecha_suspension_trabajos"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/et_fecha_suspension_trabajos"
+                app:layout_constraintWidth_percent=".6" />
+
+            <EditText
+                android:id="@+id/et_fecha_suspension_trabajos"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bordo"
+                android:inputType="date"
+                app:layout_constraintLeft_toRightOf="@+id/tv_fecha_suspension_trabajos"
+                app:layout_constraintTop_toBottomOf="@+id/tv_spacio8"
+                app:layout_constraintWidth_percent=".4" />
+
+            <TextView
+                android:id="@+id/tv_motivo_suspension"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/bordo"
+                android:gravity="center_vertical"
+                android:text="@string/motivo_suspension_trabajos"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/cb_falta_pago"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_falta_pago"
+                app:layout_constraintWidth_percent=".53" />
+
+            <TextView
+                android:id="@+id/tv_falta_pago"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bordo"
+                android:text="@string/falta_pago"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toRightOf="@+id/tv_motivo_suspension"
+                app:layout_constraintTop_toBottomOf="@+id/et_fecha_suspension_trabajos"
+                app:layout_constraintWidth_percent=".14" />
+
+            <CheckBox
+                android:id="@+id/cb_falta_pago"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bordo"
+                app:layout_constraintLeft_toRightOf="@+id/tv_motivo_suspension"
+                app:layout_constraintTop_toBottomOf="@+id/tv_falta_pago"
+                app:layout_constraintWidth_percent=".14" />
+
+            <TextView
+                android:id="@+id/tv_recurso_insuficiente"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bordo"
+                android:text="@string/recurso_insuficiente"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toRightOf="@+id/tv_falta_pago"
+                app:layout_constraintTop_toBottomOf="@+id/et_fecha_suspension_trabajos"
+                app:layout_constraintWidth_percent=".18" />
+
+            <CheckBox
+                android:id="@+id/cb_recurso_insuficiente"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bordo"
+                app:layout_constraintLeft_toRightOf="@+id/tv_falta_pago"
+                app:layout_constraintTop_toBottomOf="@+id/tv_recurso_insuficiente"
+                app:layout_constraintWidth_percent=".18" />
+
+            <TextView
+                android:id="@+id/tv_se_desconoce"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bordo"
+                android:text="@string/se_desconoce"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toRightOf="@+id/tv_recurso_insuficiente"
+                app:layout_constraintTop_toBottomOf="@+id/et_fecha_suspension_trabajos"
+                app:layout_constraintWidth_percent=".15" />
+
+            <CheckBox
+                android:id="@+id/cb_se_desconoce"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bordo"
+                app:layout_constraintLeft_toRightOf="@+id/tv_recurso_insuficiente"
+                app:layout_constraintTop_toBottomOf="@+id/tv_se_desconoce"
+                app:layout_constraintWidth_percent=".15" />
+
+            <TextView
+                android:id="@+id/tv_spacio9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bordo"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cb_se_desconoce" />
+
+            <TextView
+                android:id="@+id/tv_monto_contrato_reparacion"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/bordo"
+                android:text="@string/monto_contrato_reparacion"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/et_monto_contrato_reparacion"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/et_monto_contrato_reparacion"
+                app:layout_constraintWidth_percent=".6" />
+
+            <EditText
+                android:id="@+id/et_monto_contrato_reparacion"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bordo"
+                android:inputType="numberDecimal"
+                android:textAlignment="textEnd"
+                app:layout_constraintLeft_toRightOf="@+id/tv_fecha_suspension_trabajos"
+                app:layout_constraintTop_toBottomOf="@+id/tv_spacio9"
+                app:layout_constraintWidth_percent=".4" />
+
+            <TextView
+                android:id="@+id/tv_spacio10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bordo"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/et_monto_contrato_reparacion" />
+
+            <TextView
+                android:id="@+id/tv_recurso_concluye_reparacion"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/bordo"
+                android:text="@string/crecurso_concluye_reparacion"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/sp_recurso_concluye_reparacion"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/sp_recurso_concluye_reparacion"
+                app:layout_constraintWidth_percent=".6" />
+
+            <Spinner
+                android:id="@+id/sp_recurso_concluye_reparacion"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bordo"
+                android:entries="@array/si_no"
+                app:layout_constraintLeft_toRightOf="@+id/tv_recurso_concluye_reparacion"
+                app:layout_constraintTop_toBottomOf="@+id/tv_spacio10"
+                app:layout_constraintWidth_percent=".4" />
+
+            <TextView
+                android:id="@+id/tv_spacio11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bordo"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sp_recurso_concluye_reparacion" />
+
+            <TextView
+                android:id="@+id/tv_monto_aprox_conclusion"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/bordo"
+                android:text="@string/monto_aprox_conclusion"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/et_monto_aprox_conclusion"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/et_monto_aprox_conclusion"
+                app:layout_constraintWidth_percent=".6" />
+
+            <EditText
+                android:id="@+id/et_monto_aprox_conclusion"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bordo"
+                android:inputType="numberDecimal"
+                app:layout_constraintLeft_toRightOf="@+id/tv_monto_aprox_conclusion"
+                app:layout_constraintTop_toBottomOf="@+id/tv_spacio11"
+                app:layout_constraintWidth_percent=".4" />
+
+            <TextView
+                android:id="@+id/tv_spacio12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bordo"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sp_recurso_concluye_reparacion" />
+
+            <TextView
+                android:id="@+id/tv_observaciones_grales"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/bordo"
+                android:gravity="center_vertical"
+                android:text="@string/observaciones"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/et_observaciones_grales"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/et_observaciones_grales"
+                app:layout_constraintWidth_percent=".3" />
+
+            <EditText
+                android:id="@+id/et_observaciones_grales"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:inputType="textMultiLine"
+                android:background="@drawable/bordo"
+                app:layout_constraintLeft_toRightOf="@+id/tv_observaciones_grales"
+                app:layout_constraintTop_toBottomOf="@+id/tv_spacio12"
+                app:layout_constraintWidth_percent=".7" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
